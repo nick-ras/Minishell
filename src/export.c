@@ -1,15 +1,22 @@
-
 #include"../inc/minishell.h"
 
-int		cmp_by_alpha(a ,b)
+int		cmp_by_alpha(char *s1, char *s2)
 {
-	return (ft_strncmp(a->name, b->name));
+	while (*s1 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
-void				env_list_sort(t_info *env, int cmp(t_info.env *, t_info.env *))
+void	env_list_sort(t_info *env)
 {
-	env.env		*last_ptr;
+	
+	t_info		*ptr_1;
+	t_info		*last_ptr;
 	int			swapped;
+	int i = -1;
 
 	swapped = 1;
 	ptr_1 = env;
@@ -20,7 +27,7 @@ void				env_list_sort(t_info *env, int cmp(t_info.env *, t_info.env *))
 	{
 		swapped = 0;
 		ptr_1 = env;
-		while (ptr_1->next != last_ptr)
+		while (++i < info->num_groups)
 		{
 			if (cmp(ptr_1, ptr_1->next) > 0)
 			{
@@ -33,12 +40,15 @@ void				env_list_sort(t_info *env, int cmp(t_info.env *, t_info.env *))
 	}
 }
 
-
 void	export(t_info *sh, char **arg)
 {
-	env_list_sort(sh->env, &cmp_by_alpha);
-	display_env_list(sh->env, sh->pipe, EXPORT);
-	sh->last_status = 0;
+	env_list_sort(sh);
+	print_groups( sh -> groups, sh);
 }
 
 //printf("%s %s\n", info->env[5][0], info->env[5][1]);
+/*
+int i = -1;
+	while (++i < info->num_groups)
+
+*/
