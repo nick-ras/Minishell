@@ -170,5 +170,7 @@ int	is_an_executable(char *prompt, t_info *info);
 void	p2d(char **ptr);
 void	print_groups(t_group *groups, t_info *info);
 
+//**** tests.c ****//
+void	export(t_group *groups, t_info *info);
 
 #endif

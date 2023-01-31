@@ -25,10 +25,10 @@ char	*ft_str_cpy(char *dst, const char *src)
 static void			swap_var(t_group *a, t_group *b)
 {
 	/*
-	char    *cmd; 
+	char	*cmd; 
 	char	*path;
 	int		redirect_input;
-	char 	*redirect_input_filename;
+	char	*redirect_input_filename;
 	int		redirect_output;
 	char 	*redirect_output_filename;
 	*/

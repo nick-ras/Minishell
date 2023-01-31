@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+         #
+#    By: rporth <rporth@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 10:49:02 by nrenz             #+#    #+#              #
-#    Updated: 2023/01/26 15:00:42 by mrehberg         ###   ########.fr        #
+#    Updated: 2023/01/31 19:44:03 by rporth           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS =	src/main.c \
 	src/categorize.c \
 	src/parser.c \
 	src/parser_utils.c \
-	
+	src/export.c \
 
 OBJS =	$(SRCS:.c=.o)
 
