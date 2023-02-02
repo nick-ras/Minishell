@@ -17,6 +17,7 @@ SRCS =	src/main.c \
 	src/parser.c \
 	src/parser_utils.c \
 	src/executer.c
+	src/exports.c
 	
 
 OBJS =	$(SRCS:.c=.o)
