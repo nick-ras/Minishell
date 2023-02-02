@@ -200,5 +200,7 @@ void	executer(t_group	*info);
 void	p2d(char **ptr);
 void	print_groups(t_group *groups, t_info *info);
 
+//**** tests.c ****//
+void	export(t_group *groups, t_info *info);
 
 #endif
