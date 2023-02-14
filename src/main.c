@@ -35,6 +35,9 @@ int	ft_signal(struct sigaction	sa)
               establishing a signal handler.
 **envp environment for env.
  **/
+
+t_info	*g_info = NULL;
+
 int	main(int argc, char **argv, char **envp)
 {
 	struct sigaction	sa;
@@ -44,6 +47,8 @@ int	main(int argc, char **argv, char **envp)
 		return (1);
 	ft_signal(sa);
 	info = init(envp);
+	g_info = info;
+	printf("g_info num groups = %d\n", g_info->num_groups);
 	if(info->prompt)
 		printf("prompt"); //to silence the warning
 	printf("Welcome to the minishell!\n");

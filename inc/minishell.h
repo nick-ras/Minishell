@@ -21,6 +21,7 @@
 
 //**                PARSER CATEGORIES                    **//
 
+
 # define REDIR_INPUT 4
 # define REDIR_OUTPUT 5
 # define REDIR_OUTPUT_APPEND 6
@@ -103,6 +104,7 @@
  * like this while(group[i]) -> has to be done like this
  * while(++i < info->num_groups) don't know why.
  */
+
 typedef struct s_info
 {
 	char			*prompt;
@@ -269,4 +271,5 @@ void	p2d(char **ptr);
 void	print_groups(t_group *groups, t_info *info);
 
 
+extern struct s_info *g_info;
 #endif

@@ -143,13 +143,12 @@ int	builtins(t_group *group)
 	}
 	return (0); // is that ok Nick?
 }
-
 void	executer(t_group	*group)
 {
 	int i;
-	
-	i = -1;
+
 	print_groups(group, group->info);
+	i = -1;
 	while (++i < group->info->num_groups)
 	{
 		if (input_error_check(group->info, group) == 0)
