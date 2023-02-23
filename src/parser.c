@@ -47,18 +47,30 @@ int	parser(t_info *info) // after lexer.. groups and make space for ptr to group
 	{
 		if (!strncmp(info->input_lexer[0], "exit", 5)) // check for leaks and segfault
 			ft_exit(info);
-		if (!ft_strncmp(info->input_lexer[i], "|", 2) && ft_strncmp(info->input_lexer[0], "|", 2)) // we can use categorize here
+
+		//        ------------------------------------------------------------- Frage
+		// and what if input is > | | group not ++? but >| | group ++???
+		if (!ft_strncmp(info->input_lexer[i], "|", 2) && ft_strncmp(info->input_lexer[0], "|", 2)) // we can use categorize here 
 			pl->act_group++;				// this construct cannot handle a pipe as first argument in group 0
 
 		pl->cat = categorize(info->input_lexer[i]);
 		//printf("cat0 %d\n", pl->cat);
 		if (!parser_error_check(info, pl, i))
-			return (0);
+		{
+			printf("Pipe error Ranja\n");
+			// return (0);
+		}
 
 		pl-> is_red = found_save_redirect(pl, info, info->input_lexer[i]);
 	
 		pl->is_exe = found_save_executable(pl, info, info->input_lexer[i], i);
 		
+		if (error_wrong_pipe(pl))
+		{
+			printf("Pipe error Max\n");
+			// break; //and clean_up for this point, I think its the normal after loop clean up
+		}
+
 		found_save_arguments(pl, info, i);
 
 		pipe_detector(pl, info);
@@ -71,8 +83,7 @@ int	parser(t_info *info) // after lexer.. groups and make space for ptr to group
 		//printf("break failed\n");
 		//printf("cat1 %d\n", pl->cat);
 	}
-	//p2d(info->input_lexer);
-	
-	//print_groups(info->groups, info); // möglich <> ??
+	// p2d(info->input_lexer);
+	// print_groups(info->groups, info); // möglich <> ??
 	return (1);
 }

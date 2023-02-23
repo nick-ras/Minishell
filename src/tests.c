@@ -26,7 +26,7 @@ void	p2d(char **ptr)
 		printf("%p : _%s_\n", ptr[i], ptr[i]);
 
 	}
-	printf("%p\n", ptr[i]);
+	printf("%p\n\n", ptr[i]);
 }
 void	print_groups(t_group *groups, t_info *info)
 {

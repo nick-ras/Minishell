@@ -258,6 +258,10 @@ t_group *init_groups(t_info *info);
 
 void	make_env(char **envp, t_info *info);
 
+//**** parser_errors.c ****//
+
+int	error_wrong_pipe(t_parse_lexer *pl);
+
 //**** parser_utils.c ****//
 
 int		found_save_redirect(t_parse_lexer *pl, t_info *info, char *act_input_lexer_str);
